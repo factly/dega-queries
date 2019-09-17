@@ -47,9 +47,9 @@ db.claim.aggregate([
           $project: {
             _id: 1,
             name: 1,
+            tagLine: "$tag_line",
             slug: 1,
             clientId: "$client_id",
-            title: 1,
             description: 1,
             createdDate: "$created_date",
             lastUpdatedDate: "$last_updated_date"
