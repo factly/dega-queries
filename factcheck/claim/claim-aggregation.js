@@ -21,6 +21,7 @@ db.claim.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             numericValue: "$numeric_value",
             isDefault: "$is_default",
@@ -46,6 +47,7 @@ db.claim.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             tagLine: "$tag_line",
             slug: 1,
@@ -63,6 +65,7 @@ db.claim.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       claim: 1,
       slug: 1,
       clientId: "$client_id",

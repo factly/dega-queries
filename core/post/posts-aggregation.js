@@ -58,6 +58,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             slug: 1,
             clientId: "$client_id",
@@ -80,6 +81,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             slug: 1,
             clientId: "$client_id",
@@ -103,6 +105,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -136,6 +139,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             slug: 1,
             description: 1,
@@ -161,6 +165,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             description: 1,
             slug: 1,
@@ -185,6 +190,7 @@ db.post.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             firstName: "$first_name",
             lastName: "$last_name",
             displayName: "$display_Name",
@@ -214,6 +220,7 @@ db.post.aggregate([
               {
                 $project: {
                   _id: 1,
+                  _class:1,
                   name: 1,
                   type: 1,
                   url: 1,
@@ -245,6 +252,7 @@ db.post.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       title: 1,
       clientId: "$client_id",
       content: 1,

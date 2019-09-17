@@ -26,6 +26,7 @@ db.factcheck.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             claim: 1,
             slug: 1,
             clientId: "$client_id",
@@ -53,6 +54,7 @@ db.factcheck.aggregate([
               {
                 $project: {
                   _id: 1,
+                  _class:1,
                   name: 1,
                   numericValue: "$numeric_value",
                   isDefault: "$is_default",
@@ -75,6 +77,7 @@ db.factcheck.aggregate([
               {
                 $project: {
                   _id: 1,
+                  _class:1,
                   name: 1,
                   numericValue: "$numeric_value",
                   isDefault: "$is_default",
@@ -98,6 +101,7 @@ db.factcheck.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       title: 1,
       clientId: "$client_id",
       content: 1,

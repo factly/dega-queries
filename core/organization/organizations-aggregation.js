@@ -26,6 +26,7 @@ db.organization.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -59,6 +60,7 @@ db.organization.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -92,6 +94,7 @@ db.organization.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -125,6 +128,7 @@ db.organization.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -152,6 +156,7 @@ db.organization.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       name: 1,
       phone: 1,
       siteTitle: "$sub_title",

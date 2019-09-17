@@ -20,6 +20,7 @@ db.claimant.aggregate([
   //       {
   //         $project: {
   //           _id: 1,
+  //           _class:1,
   //           name: 1,
   //           type: 1,
   //           url: 1,
@@ -47,6 +48,7 @@ db.claimant.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       name: 1,
       numericValue: "$numeric_value",
       isDefault: "$is_default",

@@ -32,6 +32,7 @@ db.dega_user.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1,
             type: 1,
             url: 1,
@@ -66,6 +67,7 @@ db.dega_user.aggregate([
         {
           $project: {
             _id: 1,
+            _class:1,
             name: 1
           }
         }
@@ -76,6 +78,7 @@ db.dega_user.aggregate([
   {
     $project: {
       _id: 1,
+      _class:1,
       firstName: "$first_name",
       lastName: "$last_name",
       displayName: "$display_name",
