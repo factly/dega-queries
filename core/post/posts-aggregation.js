@@ -229,7 +229,6 @@ db.post.aggregate([
       sticky: 1,
       updates: 1,
       slug: 1,
-      password: 1,
       subTitle: "$sub_title",
       createdDate: "$created_date",
       tags: 1,
