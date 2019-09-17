@@ -43,7 +43,7 @@ db.dega_user.aggregate([
             description: 1,
             uploadedBy: "$uploaded_by",
             publishedDate: "$published_date",
-            lastUpdatedDate: "$lastUpdatedDate",
+            lastUpdatedDate: "$last_updated_date",
             slug: 1,
             clientId: "$client_id",
             createdDate: "$created_date",
