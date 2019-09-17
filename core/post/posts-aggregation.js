@@ -52,8 +52,21 @@ db.post.aggregate([
   {
     $lookup: {
       from: "status",
-      localField: "status",
-      foreignField: "_id",
+      let: { status: "$status"},
+      pipeline: [
+        { $match: { $expr: { $eq: ["$_id", "$$status"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
+        {
+          $project: {
+            _id: 1,
+            name: 1,
+            slug: 1,
+            clientId: "$client_id",
+            isDefault: "$is_default",
+            createdDate: "$created_date",
+            lastUpdatedDate: "$last_updated_date"
+          }
+        }
+      ],
       as: "status"
     }
   },
@@ -61,8 +74,21 @@ db.post.aggregate([
   {
     $lookup: {
       from: "format",
-      localField: "format",
-      foreignField: "_id",
+      let: { format: "$format"},
+      pipeline: [
+        { $match: { $expr: { $eq: ["$_id", "$$format"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
+        {
+          $project: {
+            _id: 1,
+            name: 1,
+            slug: 1,
+            clientId: "$client_id",
+            isDefault: "$is_default",
+            createdDate: "$created_date",
+            lastUpdatedDate: "$last_updated_date"
+          }
+        }
+      ],
       as: "format"
     }
   },
