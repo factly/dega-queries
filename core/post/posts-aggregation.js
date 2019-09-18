@@ -57,8 +57,9 @@ db.post.aggregate([
         { $match: { $expr: { $eq: ["$_id", "$$status"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             slug: 1,
             clientId: "$client_id",
@@ -80,8 +81,9 @@ db.post.aggregate([
         { $match: { $expr: { $eq: ["$_id", "$$format"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             slug: 1,
             clientId: "$client_id",
@@ -104,8 +106,9 @@ db.post.aggregate([
         { $match: { $expr: { $eq: ["$_id", "$$media"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             type: 1,
             url: 1,
@@ -138,8 +141,9 @@ db.post.aggregate([
         { $match: { $expr: { $in: ["$_id", { $ifNull: ["$$tags", []] }] } } },
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             slug: 1,
             description: 1,
@@ -164,8 +168,9 @@ db.post.aggregate([
         },
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             description: 1,
             slug: 1,
@@ -189,8 +194,9 @@ db.post.aggregate([
         },
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             firstName: "$first_name",
             lastName: "$last_name",
             displayName: "$display_Name",
@@ -219,8 +225,9 @@ db.post.aggregate([
               { $match: { $expr: { $eq: ["$_id", "$$media"] } } },
               {
                 $project: {
-                  _id: 1,
-                  _class:1,
+                  id: '$_id',
+                  _id: 0,
+                  class:'$_class',
                   name: 1,
                   type: 1,
                   url: 1,
@@ -246,13 +253,14 @@ db.post.aggregate([
         },
         { $unwind: { path: "$media", preserveNullAndEmptyArrays: true } }
       ],
-      as: "degaUsers"
+      as: "users"
     }
   },
   {
     $project: {
-      _id: 1,
-      _class:1,
+      id: "$_id",
+      _id : 0, 
+      class: "$_class",
       title: 1,
       clientId: "$client_id",
       content: 1,

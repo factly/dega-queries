@@ -20,8 +20,9 @@ db.claim.aggregate([
         { $match: { $expr: { $eq: ["$_id", "$$rating"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             numericValue: "$numeric_value",
             isDefault: "$is_default",
@@ -46,8 +47,9 @@ db.claim.aggregate([
         { $match: { $expr: { $eq: ["$_id", "$$claimant"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:'$_class',
             name: 1,
             tagLine: "$tag_line",
             slug: 1,
@@ -64,8 +66,9 @@ db.claim.aggregate([
   { $unwind: { path: "$claimant", preserveNullAndEmptyArrays: true } },
   {
     $project: {
-      _id: 1,
-      _class:1,
+      id: '$_id',
+      _id: 0,
+      class:'$_class',
       claim: 1,
       slug: 1,
       clientId: "$client_id",
