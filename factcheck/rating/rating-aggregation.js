@@ -19,8 +19,9 @@ db.rating.aggregate([
   //       { $match: { $expr: { $eq: ["$_id", "$$media"] } } }, // in order to access the variable provided in the let, we need to use a $expr, it will not pass the variable through otherwise
   //       {
   //         $project: {
-  //           _id: 1,
-  //           _class:1,
+  //           id: '$_id',
+  //           _id: 0,
+  //           class:1,
   //           name: 1,
   //           type: 1,
   //           url: 1,
@@ -47,8 +48,9 @@ db.rating.aggregate([
   // { $unwind: { path: "$media", preserveNullAndEmptyArrays: true } },
   {
     $project: {
-      _id: 1,
-      _class:1,
+      id: '$_id',
+      _id: 0,
+      class:1,
       name: 1,
       numericValue: "$numeric_value",
       isDefault: "$is_default",

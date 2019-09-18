@@ -25,8 +25,9 @@ db.factcheck.aggregate([
         { $match: { $expr: { $in: ["$_id", { $ifNull: ["$$claims", []] }] } } },
         {
           $project: {
-            _id: 1,
-            _class:1,
+            id: '$_id',
+            _id: 0,
+            class:1,
             claim: 1,
             slug: 1,
             clientId: "$client_id",
@@ -53,8 +54,9 @@ db.factcheck.aggregate([
               { $match: { $expr: { $eq: ["$_id", "$$rating"] } } },
               {
                 $project: {
-                  _id: 1,
-                  _class:1,
+                  id: '$_id',
+                  _id: 0,
+                  class:1,
                   name: 1,
                   numericValue: "$numeric_value",
                   isDefault: "$is_default",
@@ -76,8 +78,9 @@ db.factcheck.aggregate([
               { $match: { $expr: { $eq: ["$_id", "$$claimant"] } } },
               {
                 $project: {
-                  _id: 1,
-                  _class:1,
+                  id: '$_id',
+                  _id: 0,
+                  class:1,
                   name: 1,
                   numericValue: "$numeric_value",
                   isDefault: "$is_default",
@@ -100,8 +103,9 @@ db.factcheck.aggregate([
   },
   {
     $project: {
-      _id: 1,
-      _class:1,
+      id: '$_id',
+      _id: 0,
+      class:1,
       title: 1,
       clientId: "$client_id",
       content: 1,
