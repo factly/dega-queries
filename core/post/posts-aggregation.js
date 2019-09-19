@@ -259,7 +259,7 @@ db.post.aggregate([
   {
     $project: {
       id: "$_id",
-      _id : 0, 
+      _id : 0,
       class: "$_class",
       title: 1,
       clientId: "$client_id",
@@ -277,7 +277,7 @@ db.post.aggregate([
       categories: 1,
       status: 1,
       format: 1,
-      degaUsers: 1,
+      users: 1,
       media: 1
     }
   }

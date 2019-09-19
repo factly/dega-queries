@@ -1,4 +1,4 @@
-db.getCollection("dega_user").aggregate(
+db.dega_user.aggregate(
 
 	// Pipeline
 	[
